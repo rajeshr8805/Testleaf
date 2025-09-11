@@ -1,0 +1,53 @@
+Request body:
+
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are an AI assistant and expert in Banking application and credit cards"
+    },
+    {
+      "role": "user",
+      "content": "Generate a Test data for different credit card types. Instructions: Should cover all positive and negative data Limit the test data upto 50.[MANDATORY] Test data output should be in Tabular format. [MANDATORY] Test data should contain Name,Sex, DOB, Address line 1, Address line 2 , Area, District, State , Pincode, CustomerID, Creditcard provider (visa, master,rupay), cvv, type(platinum, gold, silver), max limit .  [MANTORY} - Data based on Indian market. Do not send any explanation or additional text "
+    }
+  ],
+  "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+  "temperature": 0.1
+}
+
+
+Response : 
+
+
+{
+    "id": "chatcmpl-285c6c4a-ff25-4620-bcec-6b80d78ae1ce",
+    "object": "chat.completion",
+    "created": 1757615229,
+    "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+    "choices": [
+        {
+            "index": 0,
+            "message": {
+                "role": "assistant",
+                "content": "| **Name** | **Sex** | **DOB** | **Address Line 1** | **Address Line 2** | **Area** | **District** | **State** | **Pincode** | **Customer ID** | **Credit Card Provider** | **CVV** | **Type** | **Max Limit** |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| Rohan Kumar | M | 01/01/1990 | 123, Main Street | Sector 10 | Rohini | North Delhi | Delhi | 110085 | CUST001 | Visa | 123 | Platinum | 200000 |\n| Priya Singh | F | 15/08/1995 | 456, Park Road | Near Metro Station | Safdarjung | South Delhi | Delhi | 110029 | CUST002 | Mastercard | 456 | Gold | 100000 |\n| Akash Sharma | M | 20/02/1980 | 789, Hudson Lane | Karol Bagh | Kingsway Camp | North Delhi | Delhi | 110007 | CUST003 | Rupay | 789 | Silver | 50000 |\n| Kiran Verma | F | 05/05/1992 | 321, Defence Colony | Near Market | Defence Colony | South Delhi | Delhi | 110024 | CUST004 | Visa | 321 | Platinum | 250000 |\n| Rajesh Kumar | M | 10/10/1985 | 901, Janpath | Ashok Nagar | Central Delhi | Delhi | 110002 | CUST005 | Mastercard | 901 | Gold | 150000 |\n| Neha Jain | F | 25/12/1998 | 111, Greater Kailash | Part 1 | Greater Kailash | South Delhi | Delhi | 110048 | CUST006 | Rupay | 111 | Silver | 30000 |\n| Suresh Chandra | M | 01/07/1975 | 222, Connaught Place | Near India Gate | Connaught Place | Central Delhi | Delhi | 110001 | CUST007 | Visa | 222 | Platinum | 300000 |\n| Pooja Gupta | F | 20/11/1996 | 333, Vasant Kunj | Sector B | Vasant Kunj | South Delhi | Delhi | 110070 | CUST008 | Mastercard | 333 | Gold | 120000 |\n| Sanjay Mishra | M | 15/03/1982 | 444, Shanti Niketan | Near Police Station | Shanti Niketan | South Delhi | Delhi | 110017 | CUST009 | Rupay | 444 | Silver | 40000 |\n| Ramesh Chand | M | 02/02/1970 | 555, Paharganj | Near Railway Station | Paharganj | Central Delhi | Delhi | 110055 | CUST010 | Visa | 555 | Platinum | 350000 |\n|  - | - | - | - | - | - | - | - | - | - | - | - | - | - |\n| Invalid DOB | M | 32/02/1990 | 123, Main Street | Sector 10 | Rohini | North Delhi | Delhi | 110085 | CUST011 | Visa | 123 | Platinum | 200000 |\n| Incomplete Address | F | 15/08/1995 | 456, Park Road |  | Safdarjung | South Delhi | Delhi | 110029 | CUST012 | Mastercard | 456 | Gold | 100000 |\n| Non-Indian Name | M | 20/02/1980 | 789, Hudson Lane | Karol Bagh | Kingsway Camp | North Delhi | Delhi | 110007 | CUST013 | Rupay | 789 | Silver | 50000 |\n| Negative Max Limit | M | 01/01/1990 | 123, Main Street | Sector 10 | Rohini | North Delhi | Delhi | 110085 | CUST014 | Visa | 123 | Platinum | -10000 |\n| Invalid CVV | F | 05/05/1992 | 321, Defence Colony | Near Market | Defence Colony | South Delhi | Delhi | 110024 | CUST015 | Mastercard |  abc | Gold | 100000 | \n| Duplicate Customer ID | M | 10/10/1985 | 901, Janpath | Ashok Nagar | Central Delhi | Delhi | 110002 | CUST005 | Visa | 901 | Platinum | 200000 | \n| Empty Fields | F |  | 111, Greater Kailash | Part 1 | Greater Kailash | South Delhi | Delhi | 110048 |  | Rupay | 111 | Silver | 30000 |"
+            },
+            "logprobs": null,
+            "finish_reason": "stop"
+        }
+    ],
+    "usage": {
+        "queue_time": 0.088061537,
+        "prompt_tokens": 147,
+        "prompt_time": 0.003659013,
+        "completion_tokens": 1033,
+        "completion_time": 2.36725193,
+        "total_tokens": 1180,
+        "total_time": 2.370910943
+    },
+    "usage_breakdown": null,
+    "system_fingerprint": "fp_5d3e4e58e1",
+    "x_groq": {
+        "id": "req_01k4x0fzpre2ca0pnnk514zvqj"
+    },
+    "service_tier": "on_demand"
+}
